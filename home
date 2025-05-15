@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Portofolio Saya</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <h1>Halo, saya [Hanif Robbyanto]</h1>
+  <p>Ini adalah portofolio online saya.</p>
+  <ul>
+    <li><a href="mailto:emailkamu@email.com">Email</a></li>
+    <li><a href="https://linkedin.com/in/username">LinkedIn</a></li>
+  </ul>
+</body>
+</html>
