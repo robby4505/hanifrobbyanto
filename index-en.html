@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,28 +17,27 @@
 </head>
 <body>
 
-<!-- Navbar -->
-<!-- Navbar dengan Toggle Bahasa -->
+<!-- Navbar with Language Switcher -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
   <div class="container">
-    <a class="navbar-brand fw-bold" href="index.html">Hanif Robbyanto</a>
+    <a class="navbar-brand fw-bold" href="index-en.html">Hanif Robbyanto</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto align-items-center">
-        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="project.html">Project Portfolio</a></li>
-        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+        <li class="nav-item"><a class="nav-link active" href="index-en.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="project-en.html">Project Portfolio</a></li>
+        <li class="nav-item"><a class="nav-link" href="blog-en.html">Blog</a></li>
         
-        <!-- Toggle Bahasa -->
+        <!-- Language Toggle -->
         <li class="nav-item dropdown ms-3">
           <a class="nav-link dropdown-toggle btn btn-outline-light btn-sm px-3 py-1" href="#" role="button" data-bs-toggle="dropdown">
-            🌐 ID / EN
+            🌐 EN / ID
           </a>
           <ul class="dropdown-menu dropdown-menu-end">
-            <li><a class="dropdown-item" href="index.html">🇮🇩 Indonesia</a></li>
             <li><a class="dropdown-item" href="index-en.html">🇺🇸 English</a></li>
+            <li><a class="dropdown-item" href="index.html">🇮 Indonesia</a></li>
           </ul>
         </li>
       </ul>
@@ -46,23 +45,22 @@
   </div>
 </nav>
 
-
-<!-- Hero Section (Foto di KIRI) -->
+<!-- Hero Section -->
 <header class="hero py-5">
   <div class="container">
     <div class="row align-items-center">
-      <!-- Kolom Kiri: Foto Profil -->
+      <!-- Left Column: Profile Photo -->
       <div class="col-lg-5 text-center mb-4 mb-lg-0">
-        <img src="asset/gambar/hanif_robbyanto.png" alt="Foto Profile Hanif Robbyanto" class="img-fluid rounded-3 shadow-lg border border-3 border-light" style="max-height: 420px; width: auto; object-fit: cover;">
+        <img src="asset/gambar/hanif_robbyanto.png" alt="Hanif Robbyanto Profile" class="img-fluid rounded-3 shadow-lg border border-3 border-light" style="max-height: 420px; width: auto; object-fit: cover;">
       </div>
-      <!-- Kolom Kanan: Teks & Kontak -->
+      <!-- Right Column: Text & Contact -->
       <div class="col-lg-7 text-center text-lg-start">
         <h1 class="display-4 fw-bold mb-2">Hanif Robbyanto</h1>
         <p class="lead mb-3">HR Operations & Business Development Professional</p>
         <p class="fs-5 mb-4">🎯 Transforming HR & Operations Through Digital Innovation</p>
         <div class="d-flex justify-content-center justify-content-lg-start gap-3 flex-wrap">
           <a href="mailto:hanifrobbyanto@gmail.com" class="btn btn-outline-light btn-sm"><i class="bi bi-envelope"></i> hanifrobbyanto@gmail.com</a>
-          <a href="tel:+6282278399722" class="btn btn-outline-light btn-sm"><i class="bi bi-telephone"></i> 0822-7839-9722</a>
+          <a href="tel:+6282278399722" class="btn btn-outline-light btn-sm"><i class="bi bi-telephone"></i> +62 822-7839-9722</a>
           <a href="https://linkedin.com/in/hanifrobbyanto" class="btn btn-outline-light btn-sm"><i class="bi bi-linkedin"></i> LinkedIn</a>
           <span class="text-light align-self-center"><i class="bi bi-geo-alt"></i> Lampung, Indonesia</span>
         </div>
@@ -71,80 +69,82 @@
   </div>
 </header>
 
-<!-- Tentang Saya -->
+<!-- About Me -->
 <section class="container py-5">
-  <h2 class="section-title">👋 Tentang Saya</h2>
-  <p class="lead">Profesional berpengalaman di bidang Sumber Daya Manusia, Operasi Bisnis, dan Transformasi Digital. Memiliki rekam jejak terbukti dalam perencanaan strategis, manajemen proyek, dan pengembangan organisasi. Mahir memimpin tim, mendorong efisiensi operasional, dan mengimplementasikan solusi inovatif untuk mencapai tujuan bisnis. Bersertifikasi HRIS, HRM, ISO 19011, dan Ahli Pelabuhan dengan latar belakang kuat di industri korporat dan pelabuhan.</p>
+  <h2 class="section-title">👋 About Me</h2>
+  <p class="lead">
+    Experienced professional in Human Resources, Business Operations, and Digital Transformation. Proven track record in strategic planning, project management, and organizational development. Skilled in leading teams, driving operational efficiency, and implementing innovative solutions to achieve business goals. Certified in HRIS, HRM, ISO 19011, and Port Management with a strong background in corporate and port industries.
+  </p>
 </section>
 
-<!-- Pencapaian -->
+<!-- Key Achievements -->
 <section class="bg-light py-5">
   <div class="container">
-    <h2 class="section-title">🏆 Pencapaian Utama</h2>
+    <h2 class="section-title">🏆 Key Achievements</h2>
     <div class="row g-4">
       <div class="col-md-4">
         <div class="card achievement-card h-100 shadow-sm p-3">
-          <h4>🚀 Digitalisasi Pengadaan: SIPANDU</h4>
-          <p class="text-muted fw-bold">90 → 30 Hari</p>
-          <p>Memangkas siklus pengadaan dari 90 hari menjadi 30 hari (67% lebih efisien) melalui Sistem Pengadaan Terpadu. Meningkatkan transparansi, akuntabilitas, dan kecepatan keputusan bisnis.</p>
+          <h4>🚀 Procurement Digitalization: SIPANDU</h4>
+          <p class="text-muted fw-bold">90 → 30 Days</p>
+          <p>Reduced procurement cycle from 90 days to 30 days (67% more efficient) through the Integrated Procurement System. Enhanced transparency, accountability, and business decision speed.</p>
         </div>
       </div>
       <div class="col-md-4">
         <div class="card achievement-card h-100 shadow-sm p-3">
-          <h4>💰 Ekspansi Bisnis Air Bersih</h4>
+          <h4>💰 Clean Water Business Expansion</h4>
           <p class="text-muted fw-bold">+268%</p>
-          <p>Meningkatkan pendapatan dari Rp144 juta menjadi Rp387 juta/tahun dengan ekspansi pasar dari kapal domestik ke kapal ekspor. Menciptakan sumber pertumbuhan baru yang berkelanjutan.</p>
+          <p>Increased revenue from IDR 144 million to IDR 387 million/year by expanding market from domestic to export vessels. Created a new sustainable growth source.</p>
         </div>
       </div>
       <div class="col-md-4">
         <div class="card achievement-card h-100 shadow-sm p-3">
-          <h4>🏅 Sertifikasi ISO 9001:2015</h4>
+          <h4>🏅 ISO 9001:2015 Certification</h4>
           <p class="text-muted fw-bold">100%</p>
-          <p>Menggagas dan memimpin implementasi ISO 9001:2015 untuk meningkatkan kredibilitas perusahaan, memperkuat citra di mata stakeholder, dan membuka peluang kemitraan strategis.</p>
+          <p>Spearheaded and led the implementation of ISO 9001:2015 to enhance company credibility, strengthen stakeholder image, and open up strategic partnership opportunities.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Pengalaman Kerja -->
+<!-- Work Experience -->
 <section class="container py-5">
-  <h2 class="section-title">💼 Pengalaman Kerja</h2>
+  <h2 class="section-title">💼 Work Experience</h2>
   <div class="timeline">
     <div class="mb-4 p-3 border-start border-3 border-success bg-white rounded shadow-sm">
-      <h5 class="fw-bold">Staf Senior General Manager • PT. Pelabuhan Bukit Prima</h5>
-      <span class="badge bg-secondary">Jul 2023 – Okt 2023</span>
-      <p class="mt-2">Mengawasi proyek strategis, analisis bisnis, dan koordinasi lintas departemen. Menggagas sertifikasi ISO 9001:2015 yang meningkatkan kredibilitas perusahaan di mata mitra bisnis dan stakeholder.</p>
+      <h5 class="fw-bold">Senior Staff to General Manager • PT. Pelabuhan Bukit Prima</h5>
+      <span class="badge bg-secondary">Jul 2023 – Oct 2023</span>
+      <p class="mt-2">Oversaw strategic projects, business analysis, and cross-departmental coordination. Initiated ISO 9001:2015 certification, enhancing company credibility in the eyes of business partners and stakeholders.</p>
     </div>
     <div class="mb-4 p-3 border-start border-3 border-primary bg-white rounded shadow-sm">
-      <h5 class="fw-bold">Manajer SDM & Umum • PT. Pelabuhan Bukit Prima</h5>
+      <h5 class="fw-bold">HR & General Manager • PT. Pelabuhan Bukit Prima</h5>
       <span class="badge bg-secondary">Jul 2021 – Jun 2023</span>
-      <p class="mt-2">Merumuskan strategi HR, mengelola rekrutmen, pelatihan, kompensasi, dan hubungan industrial. Mengimplementasikan HRIS untuk pelaporan otomatis ke BOD dan menyusun KPI/SOP yang selaras dengan visi bisnis.</p>
+      <p class="mt-2">Formulated HR strategies, managed recruitment, training, compensation, and industrial relations. Implemented HRIS for automated reporting to the Board of Directors and developed KPIs/SOPs aligned with business vision.</p>
     </div>
     <div class="mb-4 p-3 border-start border-3 border-warning bg-white rounded shadow-sm">
-      <h5 class="fw-bold">Asisten Manajer HRGA • PT. Pelabuhan Bukit Prima</h5>
-      <span class="badge bg-secondary">Agt 2016 – Jul 2021</span>
-      <p class="mt-2">Menginisiasi SIPANDU: transformasi digital pengadaan (90→30 hari). Memimpin ekspansi bisnis air bersih ke pasar ekspor (+268% revenue). Mengelola payroll, COLA analysis, dan pengembangan SOP.</p>
+      <h5 class="fw-bold">Assistant HRGA Manager • PT. Pelabuhan Bukit Prima</h5>
+      <span class="badge bg-secondary">Aug 2016 – Jul 2021</span>
+      <p class="mt-2">Initiated SIPANDU: digital procurement transformation (90→30 days). Led clean water business expansion to export markets (+268% revenue). Managed payroll, COLA analysis, and SOP development.</p>
     </div>
     <div class="mb-4 p-3 border-start border-3 border-info bg-white rounded shadow-sm">
-      <h5 class="fw-bold">Staf HRGA • PT. Pelabuhan Bukit Prima</h5>
-      <span class="badge bg-secondary">Agt 2015 – Jul 2016</span>
-      <p class="mt-2">Mengelola pengadaan harian, pengembangan KPI perusahaan, dan pemeliharaan data karyawan di HRIS. Membangun fondasi operasional untuk transformasi digital berikutnya.</p>
+      <h5 class="fw-bold">HRGA Staff • PT. Pelabuhan Bukit Prima</h5>
+      <span class="badge bg-secondary">Aug 2015 – Jul 2016</span>
+      <p class="mt-2">Managed daily procurement, company KPI development, and employee data maintenance in HRIS. Built the operational foundation for subsequent digital transformation.</p>
     </div>
     <div class="mb-4 p-3 border-start border-3 border-secondary bg-white rounded shadow-sm">
       <h5 class="fw-bold">Business & Marketing Staff • Qilla Tour and Travel</h5>
-      <span class="badge bg-secondary">Agt 2010 – Jul 2015</span>
-      <p class="mt-2">Merancang paket perjalanan, strategi pemasaran digital, dan implementasi sistem reservasi online. Memimpin tim dan mengelola anggaran untuk mencapai target bisnis.</p>
+      <span class="badge bg-secondary">Aug 2010 – Jul 2015</span>
+      <p class="mt-2">Designed travel packages, digital marketing strategies, and implemented online reservation systems. Led teams and managed budgets to achieve business targets.</p>
     </div>
   </div>
 </section>
 
-<!-- Keahlian & Sertifikasi -->
+<!-- Skills & Certifications -->
 <section class="bg-light py-5">
   <div class="container">
     <div class="row g-4">
       <div class="col-md-6">
-        <h3 class="section-title">⚡ Keahlian</h3>
+        <h3 class="section-title">⚡ Skills</h3>
         <div class="d-flex flex-wrap gap-2">
           <span class="badge bg-primary fs-6 p-2">HRIS Management</span>
           <span class="badge bg-primary fs-6 p-2">HRM Strategy</span>
@@ -161,30 +161,30 @@
         </div>
       </div>
       <div class="col-md-6">
-        <h3 class="section-title">📜 Sertifikasi</h3>
+        <h3 class="section-title">📜 Certifications</h3>
         <ul class="list-group">
           <li class="list-group-item">HR HRIS Certification • Udemy • 2023</li>
           <li class="list-group-item">HR HRM Certification • Udemy • 2023</li>
           <li class="list-group-item">ISO 19011:2018 Auditor • PT Narada Katiga • 2023</li>
-          <li class="list-group-item">K3L & Audit Internal SMK3 • PT Narada Katiga • 2023</li>
+          <li class="list-group-item">K3L & Internal SMK3 Audit • PT Narada Katiga • 2023</li>
           <li class="list-group-item">IGRCP Professional GRC Indonesia • 2021</li>
-          <li class="list-group-item">Ahli Pelabuhan • Kemenhub RI • 2016</li>
+          <li class="list-group-item">Port Expert • Ministry of Transportation RI • 2016</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Pendidikan & Kolaborasi -->
+<!-- Education & Collaboration -->
 <section class="container py-5">
-  <h2 class="section-title">🎓 Pendidikan</h2>
-  <p class="fs-5"><strong>Sarjana Sains Komunikasi</strong> • Universitas Lampung • Lulus: 2005</p>
+  <h2 class="section-title">🎓 Education</h2>
+  <p class="fs-5"><strong>Bachelor of Science in Communication</strong> • University of Lampung • Graduated: 2005</p>
   
   <div class="mt-5 p-4 border rounded bg-white text-center shadow-sm">
-    <h3>🤝 Mari Berkolaborasi</h3>
-    <p class="text-muted mb-3">Tersedia untuk konsultasi HR Strategy, Digital Transformation, Business Development, atau peluang profesional.</p>
+    <h3>🤝 Let's Collaborate</h3>
+    <p class="text-muted mb-3">Available for consultation on HR Strategy, Digital Transformation, Business Development, or professional opportunities.</p>
     <div class="d-flex justify-content-center gap-3">
-      <a href="mailto:hanifrobbyanto@gmail.com" class="btn btn-dark px-4">Kirim Email</a>
+      <a href="mailto:hanifrobbyanto@gmail.com" class="btn btn-dark px-4">Send Email</a>
       <a href="https://linkedin.com/in/hanifrobbyanto" class="btn btn-outline-dark px-4">LinkedIn Profile</a>
     </div>
   </div>
@@ -192,8 +192,8 @@
 
 <footer class="bg-dark text-white text-center py-3">
   <div class="container">
-    <small>© 2026 Hanif Robbyanto. All rights reserved. Portfolio profesional • Dibuat dengan ❤️ untuk kemajuan karier Indonesia</small>
-    <div class="mt-2"><a href="#" class="text-white text-decoration-none small">↑ Kembali ke atas</a></div>
+    <small>© 2026 Hanif Robbyanto. All rights reserved. Professional Portfolio • Made with ❤️ for Indonesian career advancement</small>
+    <div class="mt-2"><a href="#" class="text-white text-decoration-none small">↑ Back to top</a></div>
   </div>
 </footer>
 

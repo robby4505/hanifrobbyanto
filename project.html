@@ -8,11 +8,21 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <style>
     :root { --primary: #2c3e50; --accent: #1abc9c; }
-    body { font-family: 'Segoe UI', system-ui, sans-serif; }
-    .section-title { position: relative; padding-bottom: 10px; margin-bottom: 30px; }
-    .section-title::after { content: ''; position: absolute; bottom: 0; left: 0; width: 50px; height: 3px; background: var(--accent); }
-    .project-card { transition: transform 0.2s, box-shadow 0.2s; }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background-color: #f8f9fa; }
+    .section-title { position: relative; padding-bottom: 10px; margin-bottom: 30px; border-bottom: 3px solid var(--accent); display: inline-block; }
+    .project-card { transition: transform 0.2s, box-shadow 0.2s; border: none; border-radius: 12px; overflow: hidden; background: white; margin-bottom: 30px; }
     .project-card:hover { transform: translateY(-5px); box-shadow: 0 8px 16px rgba(0,0,0,0.1); }
+    
+    /* Sidebar & Ads Style */
+    .sidebar-box { background-color: white; border-radius: 8px; padding: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-bottom: 20px; }
+    .adsense-placeholder { background-color: #e9ecef; border: 2px dashed #ced4da; border-radius: 8px; min-height: 250px; display: flex; align-items: center; justify-content: center; color: #6c757d; font-weight: bold; text-align: center; padding: 10px; }
+    .adsense-vertical { min-height: 600px; }
+    .sticky-sidebar { position: sticky; top: 100px; z-index: 10; }
+    
+    /* Nav Link Custom */
+    .nav-link-custom { color: #495057; text-decoration: none; display: block; padding: 8px 0; border-bottom: 1px solid #f1f1f1; transition: color 0.2s; }
+    .nav-link-custom:hover { color: var(--accent); padding-left: 5px; }
+    .nav-link-custom:last-child { border-bottom: none; }
   </style>
 </head>
 <body>
@@ -20,236 +30,236 @@
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
   <div class="container">
-    <a class="navbar-brand fw-bold" href="index.html"></a>
+    <a class="navbar-brand fw-bold" href="index.html">Hanif Robbyanto</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="index.html" data-key="nav_home">Home</a></li>
-        <li class="nav-item"><a class="nav-link active" href="project.html" data-key="nav_projects">Project Portfolio</a></li>
+      <ul class="navbar-nav ms-auto align-items-center">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="project.html">Project Portfolio</a></li>
+        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+        
+        <!-- Toggle Bahasa -->
+        <li class="nav-item dropdown ms-3">
+          <a class="nav-link dropdown-toggle btn btn-outline-light btn-sm px-3 py-1" href="#" role="button" data-bs-toggle="dropdown">
+            🌐 ID / EN
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="#" onclick="setLanguage('id')">🇮 Indonesia</a></li>
+            <li><a class="dropdown-item" href="#" onclick="setLanguage('en')">🇺 English</a></li>
+          </ul>
+        </li>
       </ul>
-      <div class="d-flex align-items-center ms-3">
-        <button class="btn btn-sm btn-outline-light me-2" onclick="setLanguage('en')">EN</button>
-        <button class="btn btn-sm btn-outline-light me-1" onclick="setLanguage('id')">ID</button>
-      </div>
     </div>
   </div>
 </nav>
 
 <main class="container py-5">
-  <h1 class="text-center mb-5 fw-bold" data-key="project_title">📦 Project Portfolio</h1>
-
-  <!-- PROJECT 1: NEXTUS-ERP -->
-  <section id="nextus-erp" class="mb-5 p-4 bg-white rounded shadow-sm">
-    <h2 class="section-title" data-key="nextus_title">🌐 NEXTUS-ERP</h2>
-    <div class="row align-items-start g-4">
-      <div class="col-md-6">
-        <!-- Gambar Project -->
-        <img src="assets/project/nextus-erp.jpg" alt="NEXTUS-ERP Dashboard" class="img-fluid rounded mb-3 border">
-        <!-- Carousel Gambar NEXTUS-ERP -->
-        <div id="nextusCarousel" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner rounded border">
-            <div class="carousel-item active">
-              <img src="asset/gambar/NEXTUS-ERP/hal_login.png" class="d-block w-100" alt="Login Page">
-            </div>
-            <div class="carousel-item">
-              <img src="asset/gambar/NEXTUS-ERP/index_modul.png" class="d-block w-100" alt="Module Index">
-            </div>
-            <div class="carousel-item">
-              <img src="asset/gambar/NEXTUS-ERP/dahasbord_hris.png" class="d-block w-100" alt="HRIS Dashboard">
-            </div>
-            <div class="carousel-item">
-              <img src="asset/gambar/NEXTUS-ERP/tambah_pegawai.png" class="d-block w-100" alt="Add Employee">
-            </div>
-            <div class="carousel-item">
-              <img src="asset/gambar/NEXTUS-ERP/edit_data_pegawai.png" class="d-block w-100" alt="Edit Employee Data">
-            </div>
-            <div class="carousel-item">
-              <img src="asset/gambar/NEXTUS-ERP/payroll_dashboard.png" class="d-block w-100" alt="Payroll Dashboard">
-            </div>
-            <div class="carousel-item">
-              <img src="asset/gambar/NEXTUS-ERP/slip_gaji.png" class="d-block w-100" alt="Salary Slip">
-            </div>
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#nextusCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#nextusCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon"></span>
-          </button>
-        </div>
-        <!-- Video Demo -->
-        <div class="ratio ratio-16x9" style="display: none;">
-          <video controls class="rounded shadow-sm">
-            <source src="assets/project/nextus-erp.mp4" type="video/mp4">
-            Browser Anda tidak mendukung pemutaran video.
-          </video>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <h4 class="mb-3" data-key="desc_features">Deskripsi & Fitur Utama</h4>
-        <p class="text-muted" data-key="nextus_desc">
-          NEXTUS-ERP adalah sistem perencanaan sumber daya perusahaan yang dirancang untuk mengintegrasikan proses bisnis, HR, keuangan, dan operasional dalam satu platform terpadu. Sistem ini dikembangkan untuk meningkatkan efisiensi, transparansi data, dan kecepatan pengambilan keputusan manajemen.
-        </p>
-        <ul class="list-unstyled mt-3">
-          <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i><span data-key="feature1">Dashboard analitik real-time untuk monitoring KPI</span></li>
-          <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i><span data-key="feature2">Modul HRIS terintegrasi (Payroll, Absensi, Performance)</span></li>
-          <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i><span data-key="feature3">Automasi alur persetujuan & notifikasi multi-channel</span></li>
-          <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i><span data-key="feature4">Arsitektur berbasis cloud dengan skalabilitas tinggi</span></li>
-        </ul>
-        <a href="#" class="btn btn-outline-dark mt-3" data-key="view_docs">Lihat Dokumentasi Lengkap</a>
-      </div>
-    </div>
-  </section>
-
-<!-- PROJECT 2: Penyusunan KPI -->
-<section id="kpi" class="mb-5 p-4 bg-white rounded shadow-sm project-card">
-  <div class="row align-items-center g-4">
-    <div class="col-md-5">
-      <!-- Carousel Gambar KPI -->
-      <div id="kpiCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner rounded border">
-          <div class="carousel-item active">
-            <img src="asset/gambar/KPI/Persetujuan_KPI.png" class="d-block w-100" alt="KPI Dashboard 1">
-          </div>
-          <div class="carousel-item">
-            <img src="asset/gambar/KPI/Laba Usaha.png" class="d-block w-100" alt="KPI Dashboard 2">
-          </div>
-          <div class="carousel-item">
-            <img src="asset/gambar/KPI/Keuhan_Pelanggan.png" class="d-block w-100" alt="KPI Dashboard 3">
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#kpiCarousel" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon"></span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#kpiCarousel" data-bs-slide="next">
-          <span class="carousel-control-next-icon"></span>
-        </button>
-      </div>
-    </div>
-
-    <div class="col-md-7" style="line-height: 1.8; letter-spacing: 0.3px;">
-      <h3 class="mb-3" style="line-height: 1.4; letter-spacing: 0.5px;" data-key="kpi_title">📊 Penyusunan KPI & OKR Berbasis Strategi</h3>
-      <p class="text-muted text-justify" style="text-align: justify; line-height: 1.9; margin-bottom: 18px;" data-key="kpi_desc1">
-        Dalam penyusunan KPI/OKR, saya menggunakan pendekatan <strong>Balanced Scorecard (BSC)</strong> untuk memastikan setiap indikator kinerja selaras dengan strategi bisnis dan mencakup seluruh aspek organisasi secara seimbang, yaitu perspektif keuangan, pelanggan, proses internal, serta pembelajaran dan pengembangan.
-      </p>
-
-      <p class="text-muted text-justify" style="text-align: justify; line-height: 1.9; margin-bottom: 18px;" data-key="kpi_desc2">
-        Pendekatan ini memastikan bahwa KPI tidak hanya berfokus pada hasil akhir (financial), tetapi juga mempertimbangkan faktor pendorong kinerja seperti efektivitas proses, kepuasan pelanggan, dan kapabilitas sumber daya manusia. KPI kemudian diturunkan menjadi indikator yang terukur dan relevan, sementara OKR digunakan sebagai alat untuk mendorong pencapaian target secara lebih fokus dan progresif.
-      </p>
-
-      <p class="text-muted text-justify" style="text-align: justify; line-height: 1.9; margin-bottom: 18px;" data-key="kpi_desc3">
-        Dengan mengintegrasikan BSC, KPI, dan OKR, sistem manajemen kinerja menjadi lebih komprehensif, terarah, serta mampu menghubungkan antara strategi jangka panjang dengan eksekusi operasional secara nyata. Pendekatan ini memastikan bahwa setiap KPI/OKR tidak berdiri sendiri, melainkan menjadi bagian dari sistem manajemen kinerja yang terintegrasi dan berbasis strategi.
-      </p>
-
-      <div class="mt-3">
-        <span class="badge bg-success" data-key="badge1">Strategic Framework</span>
-        <span class="badge bg-primary" data-key="badge2">BSC</span>
-        <span class="badge bg-info text-dark" data-key="badge3">KPI</span>
-        <span class="badge bg-warning text-dark" data-key="badge4">OKR</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-  <!-- PROJECT 3: Internal Audit HR -->
-<section id="internal-audit-hr" class="mb-5 p-4 bg-white rounded shadow-sm project-card">
-  <div class="row align-items-center g-4">
-    <div class="col-md-5">                
-      <!-- Carousel Gambar Internal Audit HR -->
-      <div id="IACarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner rounded border">
-          <div class="carousel-item active">
-            <img src="assets/project/KPI/kpi1.jpg" class="d-block w-100" alt="Internal Audit HR 1">
-          </div>
-          <div class="carousel-item">
-            <img src="assets/project/kpi2.jpg" class="d-block w-100" alt="Internal Audit HR 2">
-          </div>
-          <div class="carousel-item">
-            <img src="assets/project/kpi3.jpg" class="d-block w-100" alt="Internal Audit HR 3">
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#IACarousel" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon"></span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#IACarousel" data-bs-slide="next">
-          <span class="carousel-control-next-icon"></span>
-        </button>
-      </div>
-    </div>
-
-    <div class="col-md-7" style="line-height: 1.8; letter-spacing: 0.3px;">
-      <h3 class="mb-3" style="line-height: 1.4; letter-spacing: 0.5px;" data-key="audit_title">🔍 Internal HR Audit Framework Development</h3>
-      <p class="text-muted text-justify" style="text-align: justify; line-height: 1.9; margin-bottom: 18px;" data-key="audit_desc1">
-        In conducting Internal HR Audits, I apply a structured and risk-based approach aligned with governance principles and professional standards such as Institute of Risk Management (IRGC framework). This ensures that the audit process is not only compliance-driven but also focused on identifying risks, control effectiveness, and value creation within the Human Resources function.
-      </p>
-
-      <p class="text-muted text-justify" style="text-align: justify; line-height: 1.9; margin-bottom: 18px;" data-key="audit_desc2">
-        I possess a strong understanding of the 17 HR Audit Universe, which serves as a comprehensive framework to map all critical HR areas, including workforce planning, recruitment, onboarding, performance management, training & development, compensation & benefits, industrial relations, compliance, and HR information systems. This audit universe enables a systematic evaluation of HR processes across the entire employee lifecycle.
-      </p>
-
-      <p class="text-muted text-justify" style="text-align: justify; line-height: 1.9; margin-bottom: 18px;" data-key="audit_desc3">
-        The audit process is conducted through clearly defined stages: planning (risk assessment & audit scope), execution (testing, interviews, and document review), evaluation (gap analysis & control effectiveness), and reporting (findings, risk level, and actionable recommendations). Each audit dimension is supported by measurable indicators, documented evidence, and risk-based red flags to ensure objectivity and audit reliability.
-      </p>
-
-      <p class="text-muted text-justify" style="text-align: justify; line-height: 1.9; margin-bottom: 18px;" data-key="audit_desc4">
-        By integrating governance frameworks, HR audit universe mapping, and data-driven evaluation, the Internal HR Audit system becomes more structured, transparent, and aligned with organizational strategy. This approach ensures that HR not only operates efficiently and compliantly but also contributes strategically to business sustainability and organizational excellence.
-      </p>
-
-      <div class="mt-3">
-        <span class="badge bg-success">Audit Planning</span>
-        <span class="badge bg-primary">Compliance</span>
-        <span class="badge bg-info text-dark">HR Controls</span>
-        <span class="badge bg-warning text-dark">Findings</span>
-      </div>
-    </div>
-  </div>
-</section>
-  <!-- PROJECT 4, 5, 6 (Placeholder) -->
-  <div class="row g-4 mb-5">
-    <div class="col-md-4">
-      <div class="card h-100 project-card">
-        <div class="card-body d-flex align-items-center justify-content-center" style="height: 150px; background: #f8f9fa;">
-          <i class="bi bi-folder2-open fs-1 text-muted"></i>
-        </div>
-        <div class="card-body">
-          <h5 class="card-title" data-key="project4">Project 4</h5>
-          <p class="card-text text-muted" data-key="prepare_first">Sediakan saja dulu.</p>
-          <span class="badge bg-secondary" data-key="placeholder">Placeholder</span>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card h-100 project-card">
-        <div class="card-body d-flex align-items-center justify-content-center" style="height: 150px; background: #f8f9fa;">
-          <i class="bi bi-folder2-open fs-1 text-muted"></i>
-        </div>
-        <div class="card-body">
-          <h5 class="card-title" data-key="project5">Project 5</h5>
-          <p class="card-text text-muted" data-key="prepare_first">Sediakan saja dulu.</p>
-          <span class="badge bg-secondary" data-key="placeholder">Placeholder</span>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card h-100 project-card">
-        <div class="card-body d-flex align-items-center justify-content-center" style="height: 150px; background: #f8f9fa;">
-          <i class="bi bi-folder2-open fs-1 text-muted"></i>
-        </div>
-        <div class="card-body">
-          <h5 class="card-title" data-key="project6">Project 6</h5>
-          <p class="card-text text-muted" data-key="prepare_first">Sediakan saja dulu.</p>
-          <span class="badge bg-secondary" data-key="placeholder">Placeholder</span>
-        </div>
-      </div>
+  
+  <!-- Header Judul -->
+  <div class="row mb-4">
+    <div class="col-12 text-center text-md-start">
+      <h1 class="display-5 fw-bold text-dark" data-key="project_title">📦 Project Portfolio</h1>
+      <p class="text-muted lead" data-key="project_subtitle">Kumpulan proyek strategis, inovasi digital, dan kerangka kerja HR yang telah saya kembangkan.</p>
     </div>
   </div>
 
+  <div class="row g-4">
+    
+    <!-- KOLOM KIRI (20%): Navigasi Proyek -->
+    <div class="col-lg-2 col-md-3 d-none d-lg-block">
+      <div class="sticky-sidebar">
+        <div class="sidebar-box">
+          <h6 class="fw-bold mb-3 text-uppercase text-secondary" style="font-size: 0.8rem;" data-key="quick_nav">Navigasi Cepat</h6>
+          <nav>
+            <a href="#nextus-erp" class="nav-link-custom">🔹 NEXTUS-ERP</a>
+            <a href="#kpi-okr" class="nav-link-custom">🔹 Penyusunan KPI & OKR</a>
+            <a href="#audit-hr" class="nav-link-custom">🔹 Internal HR Audit</a>
+            <a href="#sop-instruksi" class="nav-link-custom text-muted">🔸 SOP & Instruksi Kerja</a>
+            <a href="#career-path" class="nav-link-custom text-muted">🔸 Career Path Development</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    <!-- KOLOM TENGAH (60%): Konten Utama -->
+    <div class="col-lg-8 col-md-6">
+      
+      <!-- PROJECT 1: NEXTUS-ERP -->
+      <section id="nextus-erp" class="project-card p-4">
+        <h2 class="section-title" data-key="nextus_title">🌐 NEXTUS-ERP</h2>
+        <div class="row align-items-start g-4">
+          <div class="col-md-6">
+            <!-- Carousel Gambar NEXTUS-ERP -->
+            <div id="nextusCarousel" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner rounded border">
+                <div class="carousel-item active">
+                  <img src="asset/gambar/NEXTUS-ERP/hal_login.png" class="d-block w-100" alt="Login Page">
+                </div>
+                <div class="carousel-item">
+                  <img src="asset/gambar/NEXTUS-ERP/index_modul.png" class="d-block w-100" alt="Module Index">
+                </div>
+                <div class="carousel-item">
+                  <img src="asset/gambar/NEXTUS-ERP/dahasbord_hris.png" class="d-block w-100" alt="HRIS Dashboard">
+                </div>
+                <div class="carousel-item">
+                  <img src="asset/gambar/NEXTUS-ERP/tambah_pegawai.png" class="d-block w-100" alt="Add Employee">
+                </div>
+                <div class="carousel-item">
+                  <img src="asset/gambar/NEXTUS-ERP/edit_data_pegawai.png" class="d-block w-100" alt="Edit Employee Data">
+                </div>
+                <div class="carousel-item">
+                  <img src="asset/gambar/NEXTUS-ERP/payroll_dashboard.png" class="d-block w-100" alt="Payroll Dashboard">
+                </div>
+                <div class="carousel-item">
+                  <img src="asset/gambar/NEXTUS-ERP/slip_gaji.png" class="d-block w-100" alt="Salary Slip">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#nextusCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#nextusCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+              </button>
+            </div>
+            
+            <!-- Video Demo (Optional) -->
+            <div class="ratio ratio-16x9 mt-3" style="display: none;">
+              <video controls class="rounded shadow-sm">
+                <source src="asset/video/demo-nextus.mp4" type="video/mp4">
+                Browser Anda tidak mendukung pemutaran video.
+              </video>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <h4 class="mb-3" data-key="desc_features">Deskripsi & Fitur Utama</h4>
+            <p class="text-muted small" data-key="nextus_desc">
+              NEXTUS-ERP adalah sistem perencanaan sumber daya perusahaan yang dirancang untuk mengintegrasikan proses bisnis, HR, keuangan, dan operasional dalam satu platform terpadu. Sistem ini dikembangkan untuk meningkatkan efisiensi, transparansi data, dan kecepatan pengambilan keputusan manajemen.
+            </p>
+            <ul class="list-unstyled small">
+              <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-2"></i><span data-key="feature1">Dashboard analitik real-time untuk monitoring KPI</span></li>
+              <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-2"></i><span data-key="feature2">Modul HRIS terintegrasi (Payroll, Absensi, Performance)</span></li>
+              <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-2"></i><span data-key="feature3">Automasi alur persetujuan & notifikasi multi-channel</span></li>
+              <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-2"></i><span data-key="feature4">Arsitektur berbasis cloud dengan skalabilitas tinggi</span></li>
+            </ul>
+            <a href="#" class="btn btn-sm btn-outline-dark mt-2" data-key="view_docs">Lihat Dokumentasi Lengkap</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECT 2: Penyusunan KPI & OKR -->
+      <section id="kpi-okr" class="project-card p-4">
+        <div class="row align-items-center g-4">
+          <div class="col-md-4">
+            <!-- Carousel Gambar KPI -->
+            <div id="kpiCarousel" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner rounded border">
+                <div class="carousel-item active">
+                  <img src="asset/gambar/KPI/Persetujuan_KPI.png" class="d-block w-100" alt="KPI Dashboard 1">
+                </div>
+                <div class="carousel-item">
+                  <img src="asset/gambar/KPI/Laba Usaha.png" class="d-block w-100" alt="KPI Dashboard 2">
+                </div>
+                <div class="carousel-item">
+                  <img src="asset/gambar/KPI/Keuhan_Pelanggan.png" class="d-block w-100" alt="KPI Dashboard 3">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#kpiCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#kpiCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+              </button>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <h3 class="h4 mb-2" data-key="kpi_title">📊 Penyusunan KPI & OKR Berbasis Strategi</h3>
+            <p class="text-muted small" data-key="kpi_desc1">
+              Dalam penyusunan KPI/OKR, saya menggunakan pendekatan <strong>Balanced Scorecard (BSC)</strong> untuk memastikan setiap indikator kinerja selaras dengan strategi bisnis dan mencakup seluruh aspek organisasi secara seimbang, yaitu perspektif keuangan, pelanggan, proses internal, serta pembelajaran dan pengembangan.
+            </p>
+            <p class="text-muted small" data-key="kpi_desc2">
+              Pendekatan ini memastikan bahwa KPI tidak hanya berfokus pada hasil akhir (financial), tetapi juga mempertimbangkan faktor pendorong kinerja seperti efektivitas proses, kepuasan pelanggan, dan kapabilitas sumber daya manusia. KPI kemudian diturunkan menjadi indikator yang terukur dan relevan, sementara OKR digunakan sebagai alat untuk mendorong pencapaian target secara lebih fokus dan progresif.
+            </p>
+            <p class="text-muted small" data-key="kpi_desc3">
+              Dengan mengintegrasikan BSC, KPI, dan OKR, sistem manajemen kinerja menjadi lebih komprehensif, terarah, serta mampu menghubungkan antara strategi jangka panjang dengan eksekusi operasional secara nyata.
+            </p>
+            <div class="mt-2">
+              <span class="badge bg-primary" data-key="badge1">Strategic Framework</span>
+              <span class="badge bg-secondary" data-key="badge2">BSC</span>
+              <span class="badge bg-info text-dark" data-key="badge3">KPI</span>
+              <span class="badge bg-success" data-key="badge4">OKR</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECT 3: Internal HR Audit -->
+      <section id="audit-hr" class="project-card p-4">
+        <div class="row align-items-center g-4">
+          <div class="col-md-4">
+            <!-- Placeholder Gambar Audit (Ganti dengan gambar asli jika ada) -->
+            <div class="bg-light rounded d-flex align-items-center justify-content-center" style="height: 250px;">
+               <i class="bi bi-clipboard2-check fs-1 text-muted"></i>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <h3 class="h4 mb-2" data-key="audit_title">🔍 Pengembangan Framework Internal Audit HR</h3>
+            <p class="text-muted small" data-key="audit_desc1">
+              Dalam melaksanakan Internal Audit HR, saya menggunakan pendekatan terstruktur dan berbasis risiko yang selaras dengan prinsip tata kelola serta standar profesional seperti Institute of Risk Management (framework IRGC). Pendekatan ini memastikan bahwa proses audit tidak hanya berfokus pada kepatuhan (compliance), tetapi juga pada identifikasi risiko, efektivitas kontrol, serta penciptaan nilai dalam fungsi Human Resources.
+            </p>
+            <p class="text-muted small" data-key="audit_desc2">
+              Saya memiliki pemahaman yang kuat terhadap konsep <strong>17 HR Audit Universe</strong>, yang merupakan kerangka komprehensif untuk memetakan seluruh area kritikal HR, termasuk perencanaan tenaga kerja, rekrutmen, onboarding, manajemen kinerja, pelatihan & pengembangan, kompensasi & benefit, hubungan industrial, kepatuhan, serta sistem informasi SDM.
+            </p>
+            <p class="text-muted small" data-key="audit_desc3">
+              Proses audit dilakukan melalui tahapan yang jelas: perencanaan (risk assessment & ruang lingkup), pelaksanaan (pengujian, wawancara, review dokumen), evaluasi (analisis gap & efektivitas kontrol), serta pelaporan (temuan, tingkat risiko, dan rekomendasi). Setiap dimensi audit didukung oleh indikator terukur dan bukti dokumen untuk memastikan objektivitas.
+            </p>
+            <div class="mt-2">
+              <span class="badge bg-warning text-dark" data-key="audit_badge1">Audit Planning</span>
+              <span class="badge bg-danger" data-key="audit_badge2">Compliance</span>
+              <span class="badge bg-dark" data-key="audit_badge3">HR Controls</span>
+              <span class="badge bg-secondary" data-key="audit_badge4">Findings</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+       <!-- Placeholder Project Lain -->
+       <section id="sop-instruksi" class="project-card p-4 text-center text-muted py-5">
+         <h3 data-key="project_sop">SOP & Instruksi Kerja</h3>
+         <p data-key="coming_soon">Konten akan segera ditambahkan.</p>
+       </section>
+       
+       <section id="career-path" class="project-card p-4 text-center text-muted py-5">
+         <h3 data-key="project_career">Career Path Development Plan</h3>
+         <p data-key="coming_soon">Konten akan segera ditambahkan.</p>
+       </section>
+
+    </div>
+
+    <!-- KOLOM KANAN (20%): Adsense Space -->
+    <div class="col-lg-2 col-md-3 d-none d-lg-block">
+      <div class="sticky-sidebar">
+        <div class="sidebar-box">
+          <h6 class="fw-bold mb-3 text-uppercase text-secondary" style="font-size: 0.8rem;" data-key="sponsored">Sponsored</h6>
+          <!-- Slot Adsense Vertikal -->
+          <div class="adsense-placeholder adsense-vertical">
+            <small>Space Iklan<br>(160x600 / 300x600)</small>
+          </div>
+        </div>
+        
+        <!-- Widget Kontak Singkat -->
+        <div class="sidebar-box text-center">
+          <small class="text-muted d-block mb-2" data-key="need_consult">Butuh Konsultasi?</small>
+          <a href="mailto:hanifrobbyanto@gmail.com" class="btn btn-dark btn-sm w-100" data-key="contact_me">Hubungi Saya</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </main>
 
-<footer class="bg-dark text-white text-center py-3">
+<footer class="bg-dark text-white text-center py-3 mt-5">
   <div class="container">
     <small data-key="footer_text">© 2026 Hanif Robbyanto. All rights reserved.</small>
     <div class="mt-2"><a href="index.html" class="text-white text-decoration-none small" data-key="back_home">← Kembali ke Home</a></div>
@@ -261,11 +271,11 @@
 <script>
 const translations = {
   en: {
-    nav_home: "Home",
-    nav_projects: "Project Portfolio",
     project_title: "📦 Project Portfolio",
+    project_subtitle: "A collection of strategic projects, digital innovations, and HR frameworks I have developed.",
+    quick_nav: "Quick Navigation",
     nextus_title: "🌐 NEXTUS-ERP",
-    desc_features: "Description & Main Features",
+    desc_features: "Description & Key Features",
     nextus_desc: "NEXTUS-ERP is an Enterprise Resource Planning system designed to integrate business processes, HR, finance, and operations into a unified platform. This system was developed to improve efficiency, data transparency, and speed of management decision-making.",
     feature1: "Real-time analytics dashboard for KPI monitoring",
     feature2: "Integrated HRIS module (Payroll, Attendance, Performance)",
@@ -273,33 +283,34 @@ const translations = {
     feature4: "Cloud-based architecture with high scalability",
     view_docs: "View Full Documentation",
     kpi_title: "📊 Strategic KPI & OKR Development",
-    kpi_desc1: "In developing KPIs/OKRs, I use the Balanced Scorecard (BSC) approach to ensure that every performance indicator is aligned with business strategy and covers all aspects of the organization in a balanced way, namely financial, customer, internal processes, and learning and development perspectives.",
-    kpi_desc2: "This approach ensures that KPIs not only focus on final results (financial), but also consider performance drivers such as process effectiveness, customer satisfaction, and human resource capabilities. KPIs are then cascaded into measurable and relevant indicators, while OKRs are used as tools to drive target achievement in a more focused and progressive manner.",
-    kpi_desc3: "By integrating BSC, KPIs, and OKRs, the performance management system becomes more comprehensive, directed, and able to connect long-term strategy with real operational execution. This approach ensures that every KPI/OKR does not stand alone, but becomes part of an integrated and strategy-based performance management system.",
+    kpi_desc1: "In developing KPIs/OKRs, I use the Balanced Scorecard (BSC) approach to ensure that every performance indicator is aligned with business strategy and covers all aspects of the organization in a balanced way: financial, customer, internal processes, and learning & development perspectives.",
+    kpi_desc2: "This approach ensures that KPIs not only focus on final results (financial), but also consider performance drivers such as process effectiveness, customer satisfaction, and human resource capabilities. KPIs are then cascaded into measurable indicators, while OKRs are used to drive focused and progressive target achievement.",
+    kpi_desc3: "By integrating BSC, KPIs, and OKRs, the performance management system becomes more comprehensive, directed, and able to connect long-term strategy with real operational execution.",
     badge1: "Strategic Framework",
     badge2: "BSC",
     badge3: "KPI",
     badge4: "OKR",
     audit_title: "🔍 Internal HR Audit Framework Development",
-    audit_desc1: "In conducting Internal HR Audits, I apply a structured and risk-based approach aligned with governance principles and professional standards such as Institute of Risk Management (IRGC framework). This ensures that the audit process is not only compliance-driven but also focused on identifying risks, control effectiveness, and value creation within the Human Resources function.",
-    audit_desc2: "I possess a strong understanding of the 17 HR Audit Universe, which serves as a comprehensive framework to map all critical HR areas, including workforce planning, recruitment, onboarding, performance management, training & development, compensation & benefits, industrial relations, compliance, and HR information systems. This audit universe enables a systematic evaluation of HR processes across the entire employee lifecycle.",
-    audit_desc3: "The audit process is conducted through clearly defined stages: planning (risk assessment & audit scope), execution (testing, interviews, and document review), evaluation (gap analysis & control effectiveness), and reporting (findings, risk level, and actionable recommendations). Each audit dimension is supported by measurable indicators, documented evidence, and risk-based red flags to ensure objectivity and audit reliability.",
-    audit_desc4: "By integrating governance frameworks, HR audit universe mapping, and data-driven evaluation, the Internal HR Audit system becomes more structured, transparent, and aligned with organizational strategy. This approach ensures that HR not only operates efficiently and compliantly but also contributes strategically to business sustainability and organizational excellence.",
-    audit_desc: "Prepare it first. (Will be filled with audit scope, compliance checklist, main findings, and HR system improvement recommendations).",
-    in_development: "In Development",
-    project4: "Project 4",
-    project5: "Project 5",
-    project6: "Project 6",
-    prepare_first: "Prepare first.",
-    placeholder: "Placeholder",
+    audit_desc1: "In conducting Internal HR Audits, I apply a structured and risk-based approach aligned with governance principles and professional standards such as the Institute of Risk Management (IRGC framework). This ensures that the audit process is not only compliance-driven but also focused on identifying risks, control effectiveness, and value creation within the HR function.",
+    audit_desc2: "I possess a strong understanding of the 17 HR Audit Universe, which serves as a comprehensive framework to map all critical HR areas, including workforce planning, recruitment, onboarding, performance management, training & development, compensation & benefits, industrial relations, compliance, and HR information systems.",
+    audit_desc3: "The audit process is conducted through clearly defined stages: planning (risk assessment & scope), execution (testing, interviews, document review), evaluation (gap analysis & control effectiveness), and reporting (findings, risk level, and actionable recommendations). Each dimension is supported by measurable indicators and documented evidence to ensure objectivity.",
+    audit_badge1: "Audit Planning",
+    audit_badge2: "Compliance",
+    audit_badge3: "HR Controls",
+    audit_badge4: "Findings",
+    project_sop: "SOP & Work Instructions",
+    project_career: "Career Path Development Plan",
+    coming_soon: "Content coming soon.",
+    sponsored: "Sponsored",
+    need_consult: "Need Consultation?",
+    contact_me: "Contact Me",
     footer_text: "© 2026 Hanif Robbyanto. All rights reserved.",
     back_home: "← Back to Home"
   },
-
   id: {
-    nav_home: "Home",
-    nav_projects: "Portofolio Proyek",
-    project_title: "📦 Portofolio Proyek",
+    project_title: "📦 Project Portfolio",
+    project_subtitle: "Kumpulan proyek strategis, inovasi digital, dan kerangka kerja HR yang telah saya kembangkan.",
+    quick_nav: "Navigasi Cepat",
     nextus_title: "🌐 NEXTUS-ERP",
     desc_features: "Deskripsi & Fitur Utama",
     nextus_desc: "NEXTUS-ERP adalah sistem perencanaan sumber daya perusahaan yang dirancang untuk mengintegrasikan proses bisnis, HR, keuangan, dan operasional dalam satu platform terpadu. Sistem ini dikembangkan untuk meningkatkan efisiensi, transparansi data, dan kecepatan pengambilan keputusan manajemen.",
@@ -311,23 +322,25 @@ const translations = {
     kpi_title: "📊 Penyusunan KPI & OKR Berbasis Strategi",
     kpi_desc1: "Dalam penyusunan KPI/OKR, saya menggunakan pendekatan <strong>Balanced Scorecard (BSC)</strong> untuk memastikan setiap indikator kinerja selaras dengan strategi bisnis dan mencakup seluruh aspek organisasi secara seimbang, yaitu perspektif keuangan, pelanggan, proses internal, serta pembelajaran dan pengembangan.",
     kpi_desc2: "Pendekatan ini memastikan bahwa KPI tidak hanya berfokus pada hasil akhir (financial), tetapi juga mempertimbangkan faktor pendorong kinerja seperti efektivitas proses, kepuasan pelanggan, dan kapabilitas sumber daya manusia. KPI kemudian diturunkan menjadi indikator yang terukur dan relevan, sementara OKR digunakan sebagai alat untuk mendorong pencapaian target secara lebih fokus dan progresif.",
-    kpi_desc3: "Dengan mengintegrasikan BSC, KPI, dan OKR, sistem manajemen kinerja menjadi lebih komprehensif, terarah, serta mampu menghubungkan antara strategi jangka panjang dengan eksekusi operasional secara nyata. Pendekatan ini memastikan bahwa setiap KPI/OKR tidak berdiri sendiri, melainkan menjadi bagian dari sistem manajemen kinerja yang terintegrasi dan berbasis strategi.",
+    kpi_desc3: "Dengan mengintegrasikan BSC, KPI, dan OKR, sistem manajemen kinerja menjadi lebih komprehensif, terarah, serta mampu menghubungkan antara strategi jangka panjang dengan eksekusi operasional secara nyata.",
     badge1: "Strategic Framework",
     badge2: "BSC",
     badge3: "KPI",
     badge4: "OKR",
     audit_title: "🔍 Pengembangan Framework Internal Audit HR",
     audit_desc1: "Dalam melaksanakan Internal Audit HR, saya menggunakan pendekatan terstruktur dan berbasis risiko yang selaras dengan prinsip tata kelola serta standar profesional seperti Institute of Risk Management (framework IRGC). Pendekatan ini memastikan bahwa proses audit tidak hanya berfokus pada kepatuhan (compliance), tetapi juga pada identifikasi risiko, efektivitas kontrol, serta penciptaan nilai dalam fungsi Human Resources.",
-    audit_desc2: "Saya memiliki pemahaman yang kuat terhadap konsep 17 HR Audit Universe, yang merupakan kerangka komprehensif untuk memetakan seluruh area kritikal HR, termasuk perencanaan tenaga kerja, rekrutmen, onboarding, manajemen kinerja, pelatihan & pengembangan, kompensasi & benefit, hubungan industrial, kepatuhan, serta sistem informasi SDM. Audit universe ini memungkinkan evaluasi yang sistematis terhadap seluruh siklus hidup karyawan.",
-    audit_desc3: "Proses audit dilakukan melalui tahapan yang jelas, yaitu perencanaan (risk assessment & penentuan ruang lingkup audit), pelaksanaan (pengujian, wawancara, dan review dokumen), evaluasi (analisis gap & efektivitas kontrol), serta pelaporan (temuan, tingkat risiko, dan rekomendasi yang dapat ditindaklanjuti). Setiap dimensi audit didukung oleh indikator yang terukur, bukti dokumen, serta red flags berbasis risiko untuk memastikan objektivitas dan keandalan audit.",
-    audit_desc4: "Dengan mengintegrasikan framework tata kelola, pemetaan HR audit universe, serta evaluasi berbasis data, sistem Internal Audit HR menjadi lebih terstruktur, transparan, dan selaras dengan strategi organisasi. Pendekatan ini memastikan bahwa fungsi HR tidak hanya berjalan secara efisien dan patuh, tetapi juga mampu memberikan kontribusi strategis terhadap keberlanjutan bisnis dan keunggulan organisasi.",
-    audit_desc: "Sediakan saja dulu. (Akan diisi dengan scope audit, checklist compliance, temuan utama, serta rekomendasi perbaikan sistem HR).",
-    in_development: "Dalam Pengembangan",
-    project4: "Project 4",
-    project5: "Project 5",
-    project6: "Project 6",
-    prepare_first: "Sediakan saja dulu.",
-    placeholder: "Placeholder",
+    audit_desc2: "Saya memiliki pemahaman yang kuat terhadap konsep <strong>17 HR Audit Universe</strong>, yang merupakan kerangka komprehensif untuk memetakan seluruh area kritikal HR, termasuk perencanaan tenaga kerja, rekrutmen, onboarding, manajemen kinerja, pelatihan & pengembangan, kompensasi & benefit, hubungan industrial, kepatuhan, serta sistem informasi SDM.",
+    audit_desc3: "Proses audit dilakukan melalui tahapan yang jelas: perencanaan (risk assessment & ruang lingkup), pelaksanaan (pengujian, wawancara, review dokumen), evaluasi (analisis gap & efektivitas kontrol), serta pelaporan (temuan, tingkat risiko, dan rekomendasi). Setiap dimensi audit didukung oleh indikator terukur dan bukti dokumen untuk memastikan objektivitas.",
+    audit_badge1: "Audit Planning",
+    audit_badge2: "Compliance",
+    audit_badge3: "HR Controls",
+    audit_badge4: "Findings",
+    project_sop: "SOP & Instruksi Kerja",
+    project_career: "Career Path Development Plan",
+    coming_soon: "Konten akan segera ditambahkan.",
+    sponsored: "Sponsored",
+    need_consult: "Butuh Konsultasi?",
+    contact_me: "Hubungi Saya",
     footer_text: "© 2026 Hanif Robbyanto. All rights reserved.",
     back_home: "← Kembali ke Home"
   }
@@ -335,11 +348,13 @@ const translations = {
 
 function setLanguage(lang) {
   document.querySelectorAll("[data-key]").forEach(el => {
+    // Gunakan innerHTML agar tag HTML seperti <strong> tetap berfungsi
     el.innerHTML = translations[lang][el.dataset.key];
   });
 }
 
-setLanguage('en');
+// Set default language to Indonesian ('id')
+setLanguage('id');
 </script>
 </body>
 </html>
