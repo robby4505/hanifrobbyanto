@@ -78,6 +78,7 @@ function generateSEO() {
   <meta name="keywords" content="HR, Business Development, HRIS, Digitalisasi Pelabuhan, Hanif Robbyanto, HR Operations, Konsultan HR, Port Strategy, Transformasi Digital">
   <meta name="author" content="${AUTHOR_NAME}">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="google-site-verification" content="nDS7p-UtRmh00VqskyG3cWmWOyfp_Z-IKiz0dVu4cpw" />
   <link rel="canonical" href="${url}">
 `;
     
