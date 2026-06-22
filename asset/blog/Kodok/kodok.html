@@ -52,7 +52,18 @@
     .btn-back:hover { color: var(--accent); transform: translateX(-5px); }
 
     /* Footer */
-    footer { background-color: #f8f9fa; border-top: 1px solid #eee; padding: 2rem 0; margin-top: 4rem; text-align: center; }
+    footer { background-color: var(--card-bg); border-top: 1px solid #e2e8f0; padding: 3rem 0; margin-top: 5rem; text-align: center; }
+
+    /* Print Mode (Export to PDF) */
+    @media print {
+      body { background: white !important; }
+      .navbar, .btn-back, footer, .btn-outline-dark { display: none !important; }
+      .article-container { box-shadow: none !important; margin: 0 !important; padding: 0 !important; max-width: 100% !important; }
+      .article-image-wrapper { margin-bottom: 2rem; }
+      .article-image { max-height: 300px; }
+      .data-callout { border: 2px solid var(--accent); background: white !important; color: black !important; }
+      .footnotes { break-before: page; }
+    }
   </style>
 
   <!-- SEO Generated Meta Tags -->
@@ -60,6 +71,31 @@
   
   
   
+  
+
+  <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
+  
+  
+  
+  
+  
+  
+  
+  <!-- Twitter -->
+  
+  
+  
+  
+  
+  <!-- JSON-LD Schema -->
+  
+
+  <!-- SEO Generated Meta Tags -->
+  
+  
+  
+  
+  <meta name="google-site-verification" content="nDS7p-UtRmh00VqskyG3cWmWOyfp_Z-IKiz0dVu4cpw">
   
 
   <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
@@ -196,8 +232,8 @@
         "url": "https://hanifrobbyanto.vercel.app/asset/gambar/hanif_robbyanto.png"
       }
     },
-    "datePublished": "2026-06-19T19:42:30.731Z",
-    "dateModified": "2026-06-19T19:42:30.731Z"
+    "datePublished": "2026-06-22T11:08:41.980Z",
+    "dateModified": "2026-06-22T11:08:41.980Z"
   }
 ]
   </script>
